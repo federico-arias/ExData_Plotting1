@@ -11,7 +11,7 @@ dat0$datetime <- with(dat0, paste(Date,Time))
 dat0 <- transform(dat0, datetime = strptime(datetime, "%Y-%m-%d %H:%M:%S"))
 
 # Opens the device
-png(file = "plot3.png")
+#png(file = "plot3.png")
 
 # Plots the data
 with(dat0, plot(datetime, Sub_metering_1, type="l", ylim=c(0,38), ylab = "Energy sub metering"))
@@ -20,6 +20,6 @@ with(dat0, lines(datetime, Sub_metering_2, type="l", ylim=c(0,38), col = "red"))
 with(dat0, lines(datetime, Sub_metering_3, type="l", ylim=c(0,38), col = "blue"))
 
 # Creates the legend
-legend("topright", pch ="-", col = c("black", "red" , "blue"), legend = colnames(dat0[,7:9]))
+legend("topright", col = c("black", "red" , "blue"), legend = colnames(dat0[,7:9]), lwd=2)
 # Closes the device
-dev.off()
+# dev.off()
